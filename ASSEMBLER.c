@@ -51,8 +51,28 @@ void main()
    fprintf(fp3,"\t%s\t%s\t%s\n",label,opcode,operand);
    fscanf(fp1,"%s%s%s",label,opcode,operand);
   }
+  
   fprintf(fp3,"%d\t%s\t%s\t%s\n",locctr,label,opcode,operand);
   length=locctr-start;
+  fclose(fp1);
+  fclose(fp2);
+  fclose(fp3);
+  printf("\n\nThe contents of Input file:\n\n");
+  fp1=fopen("INPUT.txt","r");
+  ch=fgetc(fp1);
+  while(ch!=EOF)
+   {
+    printf("%c",ch);
+    ch=fgetc(fp1);
+   }
+   printf("\n\nThe contents of Symbol Table:\n\n");
+  fp2=fopen("SYMTAB.txt","r");
+  ch=fgetc(fp2);
+  while(ch!=EOF)
+   {
+    printf("%c",ch);
+    ch=fgetc(fp2);
+   }
   fclose(fp1);
   fclose(fp2);
   fclose(fp3);
